@@ -13,7 +13,7 @@ namespace AzureSignalRService.Functions
 {
     public static class GetAzureSignalRConnection
     {
-        [FunctionName("GetAzureSignalRConnection")]
+        [FunctionName("negotiate")]
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
             [SignalRConnectionInfo(HubName = "sendmessage")]SignalRConnectionInfo signalRConnectionInfo,

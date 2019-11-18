@@ -4,3 +4,5 @@
 
 /.vs
 /AzureFunctions/AzureSignalRService.Functions/.vs
+/AngularPublisherApp/node_modules
+/AngularSubrscriberApp/node_modules
