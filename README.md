@@ -1,10 +1,10 @@
 ---
-# Azure SignalR Services - Angular Integration
+description: >-
   This article will explain you the step by step process of using Azure SignalR
   service with Angular application.
 ---
 
-
+# Azure SignalR Services - Angular Integration
 
 ## Flow Diagram
 
@@ -144,8 +144,6 @@ export class signalRService {
 
 }
 ```
-
-## Source Code
 
 [https://github.com/ayyappangs/AzureSignalR.Angular](https://github.com/ayyappangs/AzureSignalR.Angular)
 
