@@ -59,7 +59,7 @@ This will hold the azure signal R connectionstring. You can find the connections
 
 ![Azure Signal R connectionstring location](.gitbook/assets/azuresignalr.png)
 
-Define CORS details is really important, since our client application is angular.
+Define CORS details is really important, since our client application is angular. Make sure configure all the details correctly in the function app settings.
 
 ```javascript
 {
