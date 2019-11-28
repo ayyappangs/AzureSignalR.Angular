@@ -145,5 +145,3 @@ export class signalRService {
 }
 ```
 
-[https://github.com/ayyappangs/AzureSignalR.Angular](https://github.com/ayyappangs/AzureSignalR.Angular)
-
