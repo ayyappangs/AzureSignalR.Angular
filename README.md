@@ -1,5 +1,5 @@
 ---
-description: >-
+Azure SignalR Services - Angular Integration: >-
   This article will explain you the step by step process of using Azure SignalR
   service with Angular application.
 ---
