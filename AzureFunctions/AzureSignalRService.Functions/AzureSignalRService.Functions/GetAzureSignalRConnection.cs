@@ -15,8 +15,8 @@ namespace AzureSignalRService.Functions
     {
         [FunctionName("negotiate")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
-            [SignalRConnectionInfo(HubName = "sendmessage")]SignalRConnectionInfo signalRConnectionInfo,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
+            [SignalRConnectionInfo(HubName = "broadcast")]SignalRConnectionInfo signalRConnectionInfo,
             ILogger log)
         {
             return (ActionResult)new OkObjectResult(signalRConnectionInfo);

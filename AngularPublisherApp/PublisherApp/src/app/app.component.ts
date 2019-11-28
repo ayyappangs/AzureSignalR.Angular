@@ -1,26 +1,30 @@
-import { Component, OnInit } from '@angular/core';
-import { SignalrService } from './SignalR.service';
-
+import { Component, OnInit, Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { MessageService } from './message.service';
+import { catchError, map } from 'rxjs/operators';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass']
 })
+@Injectable()
 export class AppComponent implements OnInit  {
   title = 'PublisherApp';
-  private readonly _signalRService: SignalrService;
-  message: string;
-  SuccessText: string;
-  imagePath: string;
-  constructor(signalRService: SignalrService) {
-    this._signalRService = signalRService;
+  private readonly _http: HttpClient;
+  private readonly _messageServie : MessageService;
+  constructor(http: HttpClient, messageServie : MessageService) {
+    this._http = http;
+    this._messageServie = messageServie;
   }
 
   ngOnInit() {
-    this._signalRService.init();
-    this._signalRService.messages.subscribe(message => {
-      console.log("Image received");
-      this.imagePath=message;
+
+  }
+
+  showText(title:string) {
+
+    this._messageServie.send(title).subscribe(() => {
+
     });
   }
 }

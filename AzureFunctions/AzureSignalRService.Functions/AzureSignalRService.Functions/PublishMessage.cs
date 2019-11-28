@@ -13,17 +13,17 @@ namespace AzureSignalRService.Functions
 {
     public static class PublishMessage
     {
-        [FunctionName("PublishMessage")]
+        [FunctionName("message")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
-            [SignalR(HubName = "sendmessage")]IAsyncCollector<SignalRMessage> signalRMessages,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = null)] HttpRequest req,
+            [SignalR(HubName = "broadcast")]IAsyncCollector<SignalRMessage> signalRMessages,
             ILogger log)
         {
             string requestBody = new StreamReader(req.Body).ReadToEnd();
 
             await signalRMessages.AddAsync(new SignalRMessage()
             {
-                Target = "publish",
+                Target = "notify",
                 Arguments = new object[] { requestBody }
             });
 

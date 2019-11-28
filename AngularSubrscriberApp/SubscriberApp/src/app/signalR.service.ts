@@ -12,7 +12,7 @@ export class SignalRConnectionInfo {
 }
 
 @Injectable()
-export class SignalrService {
+export class signalRService {
   private hubConnection: HubConnection;
   messages: Subject<string> = new Subject();
 
@@ -28,7 +28,7 @@ export class SignalrService {
 
   this.hubConnection.start().catch(err => console.error(err.toString()));
 
-  this.hubConnection.on('sendmessage', (data: any) => {
+  this.hubConnection.on('notify', (data: any) => {
       this.messages.next(data);
   });
   }
