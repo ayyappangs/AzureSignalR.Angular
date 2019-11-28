@@ -2,6 +2,9 @@
 Azure SignalR Services - Angular Integration: >-
   This article will explain you the step by step process of using Azure SignalR
   service with Angular application.
+description: >-
+  This article will explain you the step by step process of using Azure SignalR
+  service.
 ---
 
 # Azure SignalR Services - Angular Integration
@@ -10,11 +13,9 @@ Azure SignalR Services - Angular Integration: >-
 
 ![](.gitbook/assets/untitled%20%281%29.png)
 
-
-
 ## Azure Function - GetAzureSignalRConnection
 
-This is required to get the azure signal r connection information. Be specific on the function name, it has to be negotiate. This function will be used in subscriber app. It will supply the azure signal R connectionstring to the subscriber app. 
+This is required to get the azure signal r connection information. Be specific on the function name, it has to be negotiate. This function will be used in subscriber app. It will supply the azure signal R connectionstring to the subscriber app.
 
 ```csharp
 public static class GetAzureSignalRConnection
@@ -53,7 +54,7 @@ This function is used by the publisher app to broadcast message to multiple subs
         }
 ```
 
-## Config File for Function App 
+## Config File for Function App
 
 This will hold the azure signal R connectionstring. You can find the connectionstring from the portal below.
 
@@ -82,7 +83,6 @@ Define CORS details is really important, since our client application is angular
 This will publish message to the azure signal R service using message azure function.
 
 ```typescript
-
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
@@ -107,7 +107,6 @@ export class MessageService {
 This will listen for the published message using a npm package @aspnet/signalr.
 
 ```typescript
-
 import { Injectable } from "@angular/core";
 import { HubConnection } from '@aspnet/signalr';
 import * as signalR from '@aspnet/signalr';
